@@ -1,0 +1,18 @@
+[package]
+name = "blog"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 引入 hyper 并启用全功能（包含 http1, http2, server, client, full 等）
+hyper = { version = "1.0", features = ["full"] }
+# 通常还需要 tokio 作为异步运行时
+tokio = { version = "1", features = ["full"] }
+# http-body-util 用于处理响应体
+http-body-util = "0.1"
+# 用于发送http请求
+reqwest = { version = "0.11", features = ["json","gzip"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+flate2 = "1.0"
+toml="0.8"
